@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+.tabs {
+  display: flex;
+  gap: 1rem;
+}
+.tabs button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+}
+.hidden {
+  display: none;
+}
