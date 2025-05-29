@@ -2,6 +2,8 @@ import { useState } from "react";
 import LoginPage from "./components/LoginPage";
 import UploadPage from "./components/UploadPage";
 import Layout from "./components/Layout";
+import { Worker } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
 
 function App() {
   const [user, setUser] = useState("");
@@ -18,7 +20,9 @@ function App() {
         <LoginPage onLogIn={login} />
       ) : (
         <Layout onLogOut={() => setUser("")}>
-          <UploadPage />
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+            <UploadPage />
+          </Worker>
         </Layout>
       )}
     </>
